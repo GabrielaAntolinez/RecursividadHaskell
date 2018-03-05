@@ -1,10 +1,7 @@
 # RecursividadHaskell
 
-
-cociente :: Int -> Int-> Int
-cociente n m = if n < m then 0
-    else 1+cociente (n-m) m   
-	
-longitud :: Int->Int
-longitud n = if n <= 10 then 1
-    else 1+longitud (div n 10)
+mayorDig :: Int->Int
+mayorDig n
+	| n<10 = n
+    	| otherwise = if (mayorDig(mod n 10)*10>mayorDig(div n 10)*10) then mayorDig(mod n 10)
+					else mayorDig(div n 10)
