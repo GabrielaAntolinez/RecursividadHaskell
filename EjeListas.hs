@@ -19,6 +19,11 @@ pares (x:xs)
 	|(mod x 2) == 1 = pares (xs) +1 
 	|otherwise = pares (xs) 
   
+--Contar impares 
+cantimpar::[Int]->Int
+cantimpar []=0
+cantimpar (x:xs)= length [x | x <- (x:xs), mod x 2 ==1]
+  
 --Mayor de Lista
 mayor::[Int]->Int
 mayor [ ] = 0
