@@ -5,12 +5,11 @@ invert [ ] = [ ]
 invert (x:xs) = (invert xs)++[x]
 
 --Sumar Pares
-
 sumarPares::[Int]->Int
 sumarPares [] = 0
 sumarPares (x:xs)
-	|(mod x 2) == 0 = pares (xs) +x
-	|otherwise = pares (xs) 
+	|(mod x 2) == 0 = sumarPares (xs) +x
+	|otherwise = sumarPares (xs) 
   
 -- Contar pares
 
