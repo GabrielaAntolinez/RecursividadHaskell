@@ -24,8 +24,6 @@ cantimpar::[Int]->Int
 cantimpar []=0
 cantimpar (x:xs)= length [x | x <- (x:xs), mod x 2 ==1]
 
---contar impares
-
 impares::[Int]->Int
 impares [] = 0
 impares (x:xs)
