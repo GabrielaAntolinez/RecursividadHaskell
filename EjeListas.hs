@@ -50,7 +50,7 @@ mayor (x:xs)
   |x>mayor(xs)=x
   |otherwise=mayor(xs)
   
--- contiene
+-- contiene recursividad
 enLista::Int->[Int]->Bool
 enLista x []= False
 enLista x (y:ys)= x==y || enLista x (ys)
@@ -61,6 +61,8 @@ contiene [] _=False
 contiene _ []=True
 contiene (x:xs) (y:ys) = enLista y (x:xs) && contiene (x:xs) ys 
 
---contiene
+--contiene funciones
+contiene:: [Int]->[Int]->Bool
+contiene (x:xs) (y:ys) = and [enLista s (x:xs) | s<- (y:ys)]
 
     
