@@ -50,5 +50,17 @@ mayor (x:xs)
   |x>mayor(xs)=x
   |otherwise=mayor(xs)
   
+-- contiene
+enLista::Int->[Int]->Bool
+enLista x []= False
+enLista x (y:ys)= x==y || enLista x (ys)
+
+contiene:: [Int]->[Int]->Bool
+contiene [] []=True
+contiene [] _=False
+contiene _ []=True
+contiene (x:xs) (y:ys) = enLista y (x:xs) && contiene (x:xs) ys 
+
+--contiene
 
     
