@@ -19,7 +19,17 @@ pares [] = 0
 pares (x:xs)
 	|(mod x 2) == 1 = pares (xs) +1 
 	|otherwise = pares (xs) 
-  
+-- comparar listas
+
+comparar::[Int]->[Int]->Bool
+comparar [][]= True
+comparar (x:xs)[]=False
+comparar [](x:xs)= False
+comparar (x:xs)(y:ys)
+	| (x)==(y) = comparar(xs)(ys) && True
+	| not((x)==(y))= comparar(xs)(ys) && False
+	|otherwise= comparar(xs)(ys)
+	
 --Contar impares 
 
 cantimpar::[Int]->Int
