@@ -3,13 +3,13 @@ module EjerListas where
 invert::[Int]->[Int]
 invert [ ] = [ ]
 invert (x:xs) = (invert xs)++[x]
---sumar pares
 
+--Sumar Pares
 sumarPares::[Int]->Int
 sumarPares [] = 0
 sumarPares (x:xs)
-	|(mod x 2) == 0 = pares (xs) +x
-	|otherwise = pares (xs) 
+	|(mod x 2) == 0 = sumarPares (xs) +x
+	|otherwise = sumarPares (xs) 
   
 -- contar pares
 
